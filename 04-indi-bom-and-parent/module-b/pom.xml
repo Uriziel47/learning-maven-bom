@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>module-b</artifactId>
+
+    <parent>
+        <groupId>de.drunkenmasters.learning.maven.indibomparent</groupId>
+        <artifactId>project-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../project-parent/pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.drunkenmasters.learning.maven.indibomparent</groupId>
+            <artifactId>lib-a</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
