@@ -33,12 +33,12 @@
             </dependency>
             <dependency>
                 <groupId>de.drunkenmasters.learning.maven.parentbom</groupId>
-                <artifactId>module-b</artifactId>
+                <artifactId>module-c</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>de.drunkenmasters.learning.maven.parentbom</groupId>
-                <artifactId>module-c</artifactId>
+                <artifactId>module-b</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

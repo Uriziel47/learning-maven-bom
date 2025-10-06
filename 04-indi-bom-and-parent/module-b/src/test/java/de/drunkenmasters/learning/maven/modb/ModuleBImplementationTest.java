@@ -2,7 +2,7 @@ package de.drunkenmasters.learning.maven.modb;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ModuleBImplementationTest {
 
@@ -10,7 +10,10 @@ class ModuleBImplementationTest {
     public void value() {
         var impl = new ModuleBImplementation();
         var expected = new StringBuilder()
-                .append("Module B")
+                .append("""
+                        Module B calling C:
+                        Module C"""
+                )
                 .toString();
         assertEquals(expected, impl.value());
     }
@@ -23,9 +26,11 @@ class ModuleBImplementationTest {
         var expected = new StringBuilder()
                 .append("Version ").append(libaVersion).append(":")
                 .append(System.lineSeparator())
-                .append("Module B")
+                .append("""
+                        Module B calling C:
+                        Module C"""
+                )
                 .toString();
         assertEquals(expected, impl.valueString());
     }
-
 }

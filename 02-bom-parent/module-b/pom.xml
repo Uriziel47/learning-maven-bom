@@ -19,6 +19,10 @@
 
         <dependency>
             <groupId>de.drunkenmasters.learning.maven.bomparent</groupId>
+            <artifactId>module-c</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.drunkenmasters.learning.maven.bomparent</groupId>
             <artifactId>lib-a</artifactId>
         </dependency>
     </dependencies>

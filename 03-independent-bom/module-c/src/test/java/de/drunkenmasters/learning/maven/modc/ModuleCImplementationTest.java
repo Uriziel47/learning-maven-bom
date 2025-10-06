@@ -1,8 +1,9 @@
 package de.drunkenmasters.learning.maven.modc;
 
+import de.drunkenmasters.learning.maven.modc.ModuleCImplementation;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ModuleCImplementationTest {
 
@@ -10,10 +11,7 @@ class ModuleCImplementationTest {
     public void value() {
         var impl = new ModuleCImplementation();
         var expected = new StringBuilder()
-                .append("""
-                        Module C calling B:
-                        Module B"""
-                )
+                .append("Module C")
                 .toString();
         assertEquals(expected, impl.value());
     }
@@ -26,11 +24,9 @@ class ModuleCImplementationTest {
         var expected = new StringBuilder()
                 .append("Version ").append(libaVersion).append(":")
                 .append(System.lineSeparator())
-                .append("""
-                        Module C calling B:
-                        Module B"""
-                )
+                .append("Module C")
                 .toString();
         assertEquals(expected, impl.valueString());
     }
+
 }

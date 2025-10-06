@@ -19,10 +19,6 @@
 
         <dependency>
             <groupId>de.drunkenmasters.learning.maven.indibomparent</groupId>
-            <artifactId>module-b</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>de.drunkenmasters.learning.maven.indibomparent</groupId>
             <artifactId>lib-a</artifactId>
         </dependency>
     </dependencies>

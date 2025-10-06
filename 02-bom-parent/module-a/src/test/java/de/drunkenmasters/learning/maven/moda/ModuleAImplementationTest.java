@@ -12,10 +12,10 @@ class ModuleAImplementationTest {
         var expected = new StringBuilder()
                 .append("""
                         Module A calling B:
-                        Module B
+                        Module B calling C:
+                        Module C
                         Module A calling C:
-                        Module C calling B:
-                        Module B"""
+                        Module C"""
                 )
                 .toString();
         assertEquals(expected, impl.value());
@@ -31,10 +31,10 @@ class ModuleAImplementationTest {
                 .append(System.lineSeparator())
                 .append("""
                         Module A calling B:
-                        Module B
+                        Module B calling C:
+                        Module C
                         Module A calling C:
-                        Module C calling B:
-                        Module B"""
+                        Module C"""
                 )
                 .toString();
         assertEquals(expected, impl.valueString());
