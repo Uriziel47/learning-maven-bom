@@ -51,10 +51,7 @@
 
     <profiles>
         <profile>
-            <id>parent</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+            <id>project</id>
             <modules>
                 <module>module-a</module>
                 <module>module-b</module>
@@ -102,7 +99,7 @@
 
         </profile>
         <profile>
-            <id>independents</id>
+            <id>libraries</id>
             <modules>
                 <module>lib-a-v1.0.0</module>
                 <module>lib-a-v2.0.0</module>

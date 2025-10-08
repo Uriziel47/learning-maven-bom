@@ -225,7 +225,7 @@ We first have to install them.
 mvn clean install -Plibraries
 ```
 
-After this you can `package` with the `default profile`.
+After this you can `package` with the `default profile`, named `project`.
 ```shell
 mvn clean package -Drevision=1.0.0-SNAPSHOT -Dlib-a.version=1.0.0
 ```

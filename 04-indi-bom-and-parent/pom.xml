@@ -27,9 +27,6 @@
     <profiles>
         <profile>
             <id>project</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <modules>
                 <module>bom</module>
                 <module>project-parent</module>
@@ -39,13 +36,22 @@
             </modules>
         </profile>
         <profile>
-            <id>bom</id>
+            <id>project-only</id>
             <modules>
-                <module>bom</module>
+                <module>module-a</module>
+                <module>module-b</module>
+                <module>module-c</module>
             </modules>
         </profile>
         <profile>
             <id>independents</id>
+            <modules>
+                <module>bom</module>
+                <module>project-parent</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>libraries</id>
             <modules>
                 <module>lib-a-v1.0.0</module>
                 <module>lib-a-v2.0.0</module>

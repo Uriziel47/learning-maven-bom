@@ -16,10 +16,86 @@
 
     <profiles>
         <profile>
-            <id>parent</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+            <id>project</id>
+            <modules>
+                <module>bom</module>
+                <module>module-a</module>
+                <module>module-b</module>
+                <module>module-c</module>
+            </modules>
+
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>de.drunkenmasters.learning.maven.indibom</groupId>
+                        <artifactId>bom</artifactId>
+                        <version>${project.version}</version>
+                        <type>pom</type>
+                        <scope>import</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>de.drunkenmasters.learning.maven.indibom</groupId>
+                        <artifactId>module-a</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>de.drunkenmasters.learning.maven.indibom</groupId>
+                        <artifactId>module-b</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>de.drunkenmasters.learning.maven.indibom</groupId>
+                        <artifactId>module-c</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <lib-a.version>${lib-a.version}</lib-a.version>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>flatten-maven-plugin</artifactId>
+                            <version>1.7.3</version>
+                            <configuration>
+                                <updatePomFile>true</updatePomFile>
+                                <flattenMode>defaults</flattenMode>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>flatten</id>
+                                    <phase>process-resources</phase>
+                                    <goals>
+                                        <goal>flatten</goal>
+                                    </goals>
+                                </execution>
+                                <execution>
+                                    <id>flatten.clean</id>
+                                    <phase>clean</phase>
+                                    <goals>
+                                        <goal>clean</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <profile>
+            <id>project-only</id>
             <modules>
                 <module>module-a</module>
                 <module>module-b</module>
@@ -97,7 +173,7 @@
             </build>
         </profile>
         <profile>
-            <id>independents</id>
+            <id>libraries</id>
             <modules>
                 <module>lib-a-v1.0.0</module>
                 <module>lib-a-v2.0.0</module>
@@ -115,7 +191,7 @@
             </build>
         </profile>
         <profile>
-            <id>bom</id>
+            <id>independents</id>
             <modules>
                 <module>bom</module>
             </modules>

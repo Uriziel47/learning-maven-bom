@@ -14,12 +14,33 @@
         <lib-a.version>1.0.0</lib-a.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>project</id>
+            <properties>
+                <bom.version>${project.version}</bom.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>project-only</id>
+            <properties>
+                <bom.version>${lib-a.version}</bom.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>independents</id>
+            <properties>
+                <bom.version>${lib-a.version}</bom.version>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>de.drunkenmasters.learning.maven.indibomparent</groupId>
                 <artifactId>bom</artifactId>
-                <version>${project.version}</version>
+                <version>${bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

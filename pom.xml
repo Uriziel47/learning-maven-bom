@@ -5,27 +5,26 @@
     <artifactId>bom-aggregator</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-      
+
+    <modules>
+        <module>01-parent-is-bom</module>
+        <module>02-bom-parent</module>
+        <module>03-independent-bom</module>
+        <module>04-indi-bom-and-parent</module>
+    </modules>
+    <!-- not necessary, but to see all profiles from this aggregator -->
     <profiles>
         <profile>
-            <id>default</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-
-            <modules>
-                <module>01-parent-is-bom</module>
-                <module>02-bom-parent</module>
-                <module>03-independent-bom</module>
-                <module>04-indi-bom-and-parent</module>
-            </modules>
+            <id>libraries</id>
         </profile>
         <profile>
-            <id>bom</id>
-
-            <modules>
-                <module>03-independent-bom</module>
-            </modules>
+            <id>independents</id>
+        </profile>
+        <profile>
+            <id>project</id>
+        </profile>
+        <profile>
+            <id>project-only</id>
         </profile>
     </profiles>
 
