@@ -282,3 +282,7 @@ So you can create two *parent projects* with the specifics of the parts and use 
 And please keep in mind *aggregator projects* =/= *parent projects*!
 
 ![Scenario 04](docs/scenario-04-maven.svg)
+
+# License
+
+This repository is published under the [MIT License](LICENSE.txt).
